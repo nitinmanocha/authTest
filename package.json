@@ -1,0 +1,57 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "dependencies": {
+    "-": "0.0.1",
+    "async": "^3.2.0",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "save": "^2.4.0",
+    "squel": "^5.13.0",
+    "typeorm": "^0.2.25"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "jest": "^25.4.0",
+    "js-beautify": "^1.11.0",
+    "pkg": "^4.4.8",
+    "typescript": "^4.0.2"
+  },
+  "scripts": {
+    "test": "./scripts/tests.sh",
+    "test-server": "NODE_ENV=test;node server.js",
+    "start": "node server.js",
+    "git-check": "./scripts/npm/git-check.sh",
+    "start:dev": "nodemon dist/index.js",
+    "build:dev": "tsc --watch --preserveWatchOutput",
+    "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\"",
+    "beautify": "./scripts/beautify.sh",
+    "dist": "./scripts/dist.sh"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "./scripts/husky-pre-commit.sh",
+      "post-commit": "./scripts/husky-post-commit.sh"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "api",
+    "node",
+    "boilerplate"
+  ],
+  "author": "Sahil Narain",
+  "license": "MIT"
+}
